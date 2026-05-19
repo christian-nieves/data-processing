@@ -33,6 +33,10 @@ public class Program {
             System.out.println(foundName);
         }
 
+        System.out.println("Average age: " + String.format("%.1f", calculateAverage(people)));
+        System.out.println("Oldest: " + getOldest(people));
+        System.out.println("Youngest: " + getYoungest(people));
+
 
     }
 
