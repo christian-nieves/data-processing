@@ -14,10 +14,10 @@ public class Program {
         people.add(new Person("Bobby", "Lee", 19));
         people.add(new Person("Christian", "Nieves", 18));
         people.add(new Person("Mark", "Williams", 20));
-        people.add(new Person("Daniel",  "Martinez", 67));
-        people.add(new Person("Emily",   "Davis",    24));
-        people.add(new Person("Ryan",    "Wilson",   41));
-        people.add(new Person("Ashley",  "Taylor",   29));
+        people.add(new Person("Daniel", "Martinez", 67));
+        people.add(new Person("Emily", "Davis", 24));
+        people.add(new Person("Ryan", "Wilson", 41));
+        people.add(new Person("Ashley", "Taylor", 29));
 
         System.out.println("Search by Name: ");
         String userInput = scanner.nextLine();
@@ -32,5 +32,36 @@ public class Program {
         for (Person foundName : foundNames) {
             System.out.println(foundName);
         }
+
+
     }
+
+    private static double calculateAverage(List<Person> people) {
+        double totalAge = 0;
+        for (Person person : people) {
+            totalAge += person.getAge();
+        }
+        return totalAge / people.size();
+    }
+
+    private static int getOldest(List<Person> people) {
+        int oldestAge = people.get(0).getAge();
+        for (Person person : people) {
+            if (person.getAge() > oldestAge) {
+                oldestAge = person.getAge();
+            }
+        }
+        return oldestAge;
+    }
+
+    private static int getYoungest(List<Person> people) {
+        int youngestAge = people.get(0).getAge();
+        for (Person person : people) {
+            if (person.getAge() < youngestAge) {
+                youngestAge = person.getAge();
+            }
+        }
+        return youngestAge;
+    }
+
 }
